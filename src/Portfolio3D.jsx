@@ -371,7 +371,7 @@ export default function Portfolio3D() {
         <Reveal>
           <div className="panel mt-8 flex flex-col justify-between gap-4 rounded-2xl p-6 sm:flex-row sm:items-center">
             <div><h3 className="head text-xl font-bold text-white">Monthly retainer</h3>
-              <p className="mt-1 text-slate-300">A dedicated React developer for ongoing features, fixes and code review. From {cur === "USD" ? "$900" : "₹75,000"} per month.</p></div>
+              <p className="mt-1 text-slate-300">A dedicated React developer for ongoing features, fixes and code review. From {cur === "USD" ? "$209" : "₹20,000"} per month.</p></div>
             <a href={hire("Monthly retainer")} className="flex-none rounded-lg border border-white/50 px-5 py-3 text-center font-bold text-white hover:bg-white hover:text-slate-900">Ask about a retainer</a>
           </div>
         </Reveal>
