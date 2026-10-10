@@ -23,15 +23,21 @@ const PROJECTS = [
 // Prices are starting points. Adjust to your market.
 const PACKAGES = [
   { name: "Launch", tag: "Landing page or portfolio", usd: 59, inr: 4999, time: "5-7 days", c: "from-amber-300 to-orange-400",
-    items: ["Up to 5 sections, custom design", "React or Next.js + Tailwind CSS", "Mobile-first, fast, SEO-ready", "Contact form or WhatsApp button", "Deployed on Vercel or Netlify", "1 round of revisions"] },
+    items: ["Up to 5 sections, custom design", "WordPress, React or Next.js", "Mobile-first, fast, SEO-ready", "Contact form or WhatsApp button", "Deployed on your hosting or Vercel/Netlify", "1 round of revisions"] },
   { name: "Build", tag: "Business site or web app", usd: 99, inr: 8999, time: "2-4 weeks", c: "from-cyan-300 to-blue-500", hot: true,
-    items: ["Up to 10 pages or screens from your Figma", "Next.js, TypeScript, Redux Toolkit / RTK Query", "REST API integration, login and roles", "Admin dashboard or CMS hookup", "Performance pass (SSR/SSG, lazy loading)", "2 rounds of revisions + 14 days support"] },
+    items: ["Up to 10 pages or screens from your Figma", "WordPress business site or WooCommerce/Shopify store", "Store setup, product pages and payment integration", "REST API integration, login and roles", "Performance pass and responsive testing", "2 rounds of revisions + 14 days support"] },
   { name: "Product", tag: "Full-stack MVP or mobile app", usd: 3500, inr: 290000, time: "6-10 weeks", c: "from-pink-300 to-violet-500",
-    items: ["Web app + React Native mobile app", "Node.js / Python backend, MySQL or PostgreSQL", "Auth, payments, notifications, WebSockets", "Reusable component library", "Store-ready build and release help", "Weekly demos + 30 days support"] },
+    items: ["Web app + React Native mobile app", "Node.js / Python backend, MySQL or PostgreSQL", "Auth, payments, notifications, WebSockets", "Custom integrations for WordPress, WooCommerce or Shopify", "Reusable component library and release help", "Weekly demos + 30 days support"] },
+];
+
+const SERVICES = [
+  { name: "WordPress Websites", description: "Responsive business websites, portfolios and blogs that are easy to update and manage." },
+  { name: "WooCommerce Stores", description: "Online stores with product catalogs, secure checkout, payment setup and essential store configuration." },
+  { name: "Shopify Stores", description: "Shopify store setup and custom storefronts, with product, payment and app integrations." },
 ];
 
 const STEPS = [["Talk", "A free 20-minute call. You explain the goal, I tell you what it takes."], ["Scope", "A written scope, fixed price and timeline before any work starts."], ["Build", "Weekly demos on a live preview link, so you see progress as it happens."], ["Launch", "Deployment, handover and a support window after release."]];
-const STACK = ["React.js", "Next.js", "React Native", "TypeScript", "Redux Toolkit", "RTK Query", "Tailwind CSS", "Node.js", "Django", "PostgreSQL", "Docker", "Gemini API"];
+const STACK = ["React.js", "Next.js", "React Native", "TypeScript", "Redux Toolkit", "RTK Query", "Tailwind CSS", "WordPress", "WooCommerce", "Shopify", "Node.js", "Django", "PostgreSQL", "Docker", "Gemini API"];
 const money = (p, c) => (c === "USD" ? `$${p.usd.toLocaleString("en-US")}` : `₹${p.inr.toLocaleString("en-IN")}`);
 
 /* ---------- 3D scenes: one per theme. The camera reacts to scroll and mouse. ---------- */
@@ -304,7 +310,7 @@ export default function Portfolio3D() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#top" className="head text-lg font-extrabold text-white"><img src={logo} alt="Logo" className="h-12 w-12" /></a>
           <div className="hidden gap-7 text-sm font-semibold text-slate-300 md:flex">
-            {[["Work", "#work"], ["Packages", "#packages"], ["Process", "#process"], ["Stack", "#stack"]].map(([l, h]) => <a key={l} href={h} className="hover:text-[color:var(--a1)]">{l}</a>)}
+            {[["Work", "#work"], ["Services", "#services"], ["Packages", "#packages"], ["Process", "#process"], ["Stack", "#stack"]].map(([l, h]) => <a key={l} href={h} className="hover:text-[color:var(--a1)]">{l}</a>)}
           </div>
           <a href="#contact" className="rounded-lg bg-gradient-to-r from-[color:var(--a1)] to-[color:var(--a2)] px-4 py-2 text-sm font-bold text-slate-950 hover:brightness-110">Hire me</a>
         </nav>
@@ -336,6 +342,22 @@ export default function Portfolio3D() {
         <Reveal><h2 className="head text-3xl font-extrabold text-white md:text-5xl">Work that's live</h2>
           <p className="mt-3 max-w-xl text-lg text-slate-300">Spin the ring. Click any card to bring it to the front.</p></Reveal>
         <div className="mt-10"><Carousel /></div>
+      </section>
+
+      <section id="services" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20">
+        <Reveal><h2 className="head text-3xl font-extrabold text-white md:text-5xl">Website and e-commerce services</h2>
+          <p className="mt-3 max-w-xl text-lg text-slate-300">From a flexible WordPress site to a complete online store, choose the platform that fits your business.</p></Reveal>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {SERVICES.map((service, i) => (
+            <Reveal key={service.name} delay={i * 120}>
+              <article className="panel h-full rounded-2xl p-6">
+                <h3 className="head text-xl font-bold text-white">{service.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">{service.description}</p>
+                <a href="#packages" className="mt-5 inline-block text-sm font-bold text-[color:var(--a1)] hover:underline">Explore packages →</a>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section id="packages" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20">
@@ -372,7 +394,7 @@ export default function Portfolio3D() {
         <Reveal>
           <div className="panel mt-8 flex flex-col justify-between gap-4 rounded-2xl p-6 sm:flex-row sm:items-center">
             <div><h3 className="head text-xl font-bold text-white">Monthly retainer</h3>
-              <p className="mt-1 text-slate-300">A dedicated React developer for ongoing features, fixes and code review. From {cur === "USD" ? "$209" : "₹20,000"} per month.</p></div>
+              <p className="mt-1 text-slate-300">Ongoing features, fixes and support for React, WordPress, WooCommerce or Shopify. From {cur === "USD" ? "$209" : "₹20,000"} per month.</p></div>
             <a href={hire("Monthly retainer")} className="flex-none rounded-lg border border-white/50 px-5 py-3 text-center font-bold text-white hover:bg-white hover:text-slate-900">Ask about a retainer</a>
           </div>
         </Reveal>
