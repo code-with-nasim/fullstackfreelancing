@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import * as THREE from "three"; // npm i three
+import logo from "./logo.png";
 
 const ME = {
   name: "Md Nasim",
@@ -301,7 +302,7 @@ export default function Portfolio3D() {
 
       <header className="panel sticky top-0 z-30 rounded-none border-x-0 border-t-0">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <a href="#top" className="head text-lg font-extrabold text-white">{ME.name}</a>
+          <a href="#top" className="head text-lg font-extrabold text-white"><img src={logo} alt="Logo" className="h-12 w-12" /></a>
           <div className="hidden gap-7 text-sm font-semibold text-slate-300 md:flex">
             {[["Work", "#work"], ["Packages", "#packages"], ["Process", "#process"], ["Stack", "#stack"]].map(([l, h]) => <a key={l} href={h} className="hover:text-[color:var(--a1)]">{l}</a>)}
           </div>
