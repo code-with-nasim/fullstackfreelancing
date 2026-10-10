@@ -323,7 +323,7 @@ export default function Portfolio3D() {
             <a href="#work" className="panel rounded-lg px-6 py-3 font-bold text-white hover:bg-white/10">View my work</a>
           </div>
           <dl className="mt-12 grid max-w-lg grid-cols-4 gap-4">
-            {[["6+", "years"], ["8+", "apps led"], ["4", "Play Store"], ["100+", "APIs"]].map(([n, l]) => (
+            {[["6+", "years"], ["8+", "web/apps"], ["4", "Play Store"], ["100+", "APIs"]].map(([n, l]) => (
               <div key={l}><dt className="head text-3xl font-extrabold text-white">{n}</dt><dd className="text-xs text-slate-400">{l}</dd></div>
             ))}
           </dl>
