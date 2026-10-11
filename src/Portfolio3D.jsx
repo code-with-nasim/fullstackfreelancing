@@ -5,7 +5,7 @@ import logo from "./logo.png";
 const ME = {
   name: "Md Nasim",
   email: "mdnasim4234@gmail.com",
-  linkedin: "https://www.linkedin.com/in/mohd-nasim-752105152/",
+  linkedin: "https://www.linkedin.com/in/md-nasim-128070443/?isSelfProfile=true",
   whatsapp: "https://wa.me/919911846140",
 };
 
