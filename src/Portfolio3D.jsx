@@ -10,6 +10,8 @@ const ME = {
 };
 
 const PROJECTS = [
+  { t: "Dekor Company", k: "Shopify", d: "Luxury home decor storefront built on Shopify with a premium browsing experience and conversion-focused product presentation.", s: "Shopify, Liquid, Theme Customization", url: "https://www.dekorcompany.com/" },
+  { t: "Shaurya Sanadhya", k: "Shopify", d: "Fashion storefront designed for clean product storytelling, seamless shopping, and a polished luxury brand feel.", s: "Shopify, Liquid, Storefront Design", url: "https://www.shauryasanadhya.com/" },
   { t: "Dimas", k: "Web", d: "E-commerce catalog and order management for a Saudi Arabia client.", s: "React, Redux Toolkit, Tailwind", url: "https://dimas.com.sa" },
   { t: "Khayyal Admin", k: "Web", d: "Admin platform for a ride-booking and marketplace product.", s: "React, RTK Query, Tailwind", url: "https://admin.khayyal.app" },
   { t: "Khayyal", k: "Mobile", d: "Ride booking and buy/sell app, live on the Play Store.", s: "React Native, Redux Toolkit" },
